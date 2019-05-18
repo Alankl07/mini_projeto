@@ -1,0 +1,53 @@
+/*Tela tarefas*/
+
+.divb{
+    padding: 20px;
+    margin-left: 50%;
+}
+
+div#priv{
+    position: relative;
+    top:10px;
+}
+
+.descri{
+    position: relative;
+    top: 10px;
+}
+
+.tipo{
+    position: relative;
+    top: 10px;
+}
+
+.stat{
+    position: relative;
+    top: 20px;
+}
+
+.conc{
+    position: relative;
+    top: 20px;
+}
+
+.btn{
+    position: relative;
+    top: 10px;
+    width: 120px;
+    left: 255px;
+}
+
+h1#titulo{
+    position: relative;
+    top: 10px;
+    text-align: center;
+}
+
+.divl{
+    position: absolute;
+    background-image: url('../img/imgn.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50%;
+    height:  100%;
+}
