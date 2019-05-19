@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="asset('css/app.css')" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link href="{{asset('css/stylo.css')}}" rel="stylesheet">
+
     <title>Tipo de Tarefa</title>
 </head>
-<body>
-    <form action="">
+<body id="body">
+    <div id="divlt">
+
+    </div>
+    <form id="divm" action="">
+        <h1>Tipo de Tarefa</h1>
         <label for="nome">Nome da Tarefa</label>
-        <input type="text" id="nome" name="nome">
-        <div>
-            <button type="submit" style="margin-top:50px"  disabled="disabled">Cadastrar</button>
+        <input class="form-control" type="text" id="nome" name="nome">
+        <div id="btntip">
+            <button class="btn btn-primary" type="submit" >Cadastrar</button>
         </div>
     </form>
 </body>

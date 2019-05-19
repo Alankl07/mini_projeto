@@ -14,7 +14,7 @@
     </script>
     <title>Tarefas</title>
 </head>
-<body>
+<body id="body">
     <form>
                 
                 <div class="divl">
@@ -33,10 +33,18 @@
 
             <div id="priv">
                 <label for="privaciadade">Privacidade</label>
-                <select name="privacidade">
+                <select class="form-control" name="privacidade">
                     <option name="privacidade"> Selecione</option>
                     <option name="privacidade"> Público</option>
                     <option name="privacidade"> Privado</option>
+                </select>
+            </div>
+            <div class="stat">
+                <label for="status">Status</label>
+                <select class="form-control" name="status">
+                    <option name="status"> A Fazer</option>
+                    <option name="status">Fazendo</option>
+                    <option name="status">Feito</option>
                 </select>
             </div>
 
@@ -48,15 +56,6 @@
             <div class="tipo">
                 <label for="tipo"> Tipo</label>
                 <input class="form-control" id="tipo" name="tipo" type="text">
-            </div>
-
-            <div class="stat">
-                <label for="status">Status</label>
-                <select name="status">
-                    <option name="status"> A Fazer</option>
-                    <option name="status">Fazendo</option>
-                    <option name="status">Feito</option>
-                </select>
             </div>
 
             <div class="conc">
