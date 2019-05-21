@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('login', function(){
+    return view('login');
 });
 
 Route::get('tarefa', function(){
@@ -26,3 +27,6 @@ Route::get('tipo_de_tarefas', function(){
 Route::get('cadastro', function(){
     return view('cadastro_usuario');
 });
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');

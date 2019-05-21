@@ -21,6 +21,7 @@
             </div>
         <div class="divb">
         <h1 id="titulo">Tarefas</h1>
+        
             <div>
                 <label for="titulo">Titulo</label>
                 <input class="form-control" type="text" name="titulo" id="titulo">
@@ -66,6 +67,7 @@
                 <button class="btn btn-primary">Criar</button>
             </div>
         </div>
+        
     </form>
 </body>
 </html>
