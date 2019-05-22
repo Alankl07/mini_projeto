@@ -19,9 +19,9 @@ class CreateTarefasTable extends Migration
             $table->string('Usuario');
             $table->string('Privacidade');
             $table->string('Descricao');
-            $table->foreign('id')->references('id')->on('tipo_de_tarefas');
+            $table->string('tipo_de_tarefas');
             $table->string('Status');
-            $table->date('Data_da_conclusão');
+            $table->String('Data_da_conclusão');
             $table->timestamps();
         });
     }

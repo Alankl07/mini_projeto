@@ -11,22 +11,10 @@
 |
 */
 
-
-Route::get('login', function(){
-    return view('login');
+Route::get('/', function(){
+    return view('inicial');
 });
 
-Route::get('tarefa', function(){
-    return view('tarefas');
-});
-
-Route::get('tipo_de_tarefas', function(){
-    return view('tipo_de_tarefa');
-});
-
-Route::get('cadastro', function(){
-    return view('cadastro_usuario');
-});
-Auth::routes();
-
-Route::get('/', 'HomeController@index')->name('home');
+Route::resource('tarefas', 'TarefaController');
+Route::resource('usuario', 'UsuarioController');
+Route::resource('tipo', 'TipoDeTarefaController');

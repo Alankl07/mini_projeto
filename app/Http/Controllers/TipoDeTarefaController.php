@@ -14,7 +14,8 @@ class TipoDeTarefaController extends Controller
      */
     public function index()
     {
-        //
+        $tipo = Tipo_de_tarefa::all();
+        return view('lista_tipo', compact('tipo'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TipoDeTarefaController extends Controller
      */
     public function create()
     {
-        //
+        return view('tipo_de_tarefa');
     }
 
     /**
@@ -35,7 +36,10 @@ class TipoDeTarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipo = new Tipo_de_tarefa();
+        $tipo->Nome = $request->input('nome');
+        $tipo->save();
+        return redirect()->route('tipo.index');
     }
 
     /**
@@ -57,7 +61,7 @@ class TipoDeTarefaController extends Controller
      */
     public function edit(Tipo_de_tarefa $tipo_de_tarefa)
     {
-        //
+       return view('tipo_editar', compact('tipo_de_tarefa'));
     }
 
     /**
@@ -69,7 +73,9 @@ class TipoDeTarefaController extends Controller
      */
     public function update(Request $request, Tipo_de_tarefa $tipo_de_tarefa)
     {
-        //
+        $tipo_de_usuario->nome = $request->input('nome');
+        $tipo_de_usuario->save();
+        return redrect()->route('tipo.index');
     }
 
     /**
@@ -80,6 +86,7 @@ class TipoDeTarefaController extends Controller
      */
     public function destroy(Tipo_de_tarefa $tipo_de_tarefa)
     {
-        //
+        $tipo_de_tarefa->delete();
+        return redirect()->route('tipo.index');
     }
 }

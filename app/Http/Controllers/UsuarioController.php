@@ -14,7 +14,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = Usuario::all();
+        return view('lista_usuario', compact('usuarios'));
     }
 
     /**
@@ -24,7 +25,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastro_usuario');
     }
 
     /**
@@ -35,7 +36,16 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usua = new Usuario();
+        $usua->nome = $request->input("nome");
+        $usua->sexo = $request->input("sexo");
+        $usua->Data_de_Nascimento = $request->input("datepicker");
+        $usua->email = $request->input("email");
+        $usua->Telefone = $request->input("tel");
+        $usua->login = $request->input("login");
+        $usua->senha = $request->input("senha");
+        $usua->save();
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -57,7 +67,7 @@ class UsuarioController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        //
+        return view('usuario_editar', compact('usuario'));
     }
 
     /**
@@ -69,7 +79,15 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+        $usuario->nome = $request->input("nome");
+        $usuario->sexo = $request->input("sexo");
+        $usuario->Data_de_Nascimento = $request->input("datepicker");
+        $usuario->Email = $request->input("email");
+        $usuario->Telefone = $request->input("tel");
+        $usuario->Login = $request->input("login");
+        $usuario->senha = $request->input("senha");
+        $usuario->save();
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -80,6 +98,7 @@ class UsuarioController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
-        //
+        $usuario->delete();
+        return redirect()->route('usuario.index');
     }
 }

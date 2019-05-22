@@ -12,11 +12,13 @@
         $( function() {
         $( "#datepicker" ).datepicker();} );
     </script>
-    <title>Tarefas</title>
+    <title>Editar Tarefa</title>
 </head>
 <body id="body">
-    <form action="{{route('tarefas.store')}}" method="POST">
-                @csrf
+    <form action="{{route('tarefas.update', $tarefa)}}" method="POST">
+        @csrf
+        @method('PUT')
+                
                 <div class="divl">
             </div>
         <div class="divb">
@@ -24,17 +26,17 @@
         
             <div>
                 <label for="titulo">Titulo</label>
-                <input class="form-control" type="text" name="titulo" id="titulo">
+                <input class="form-control" type="text" name="titulo" id="titulo" value="{{$tarefa->Titulo}}">
             </div>
 
             <div>
                 <label for="usuario">Usuario</label>
-                <input class="form-control" type="text" name="usuario" id="usuario">
+                <input class="form-control" type="text" name="usuario" id="usuario" value="{{$tarefa->Usuario}}">
             </div>
 
             <div id="priv">
                 <label for="privaciadade">Privacidade</label>
-                <select class="form-control" name="privacidade">
+                <select value="{{$tarefa->Privacidade}}" class="form-control" name="privacidade">
                     <option name="privacidade"> Selecione</option>
                     <option name="privacidade"> Público</option>
                     <option name="privacidade"> Privado</option>
@@ -42,7 +44,7 @@
             </div>
             <div class="stat">
                 <label for="status">Status</label>
-                <select class="form-control" name="status">
+                <select  class="form-control" name="status" >
                     <option name="status"> A Fazer</option>
                     <option name="status">Fazendo</option>
                     <option name="status">Feito</option>
@@ -51,20 +53,20 @@
 
             <div class="descri">
                 <label for="descricao"> Descrição</label>
-                <input class="form-control" type="text" name="descricao" id="descricao">
+                <input class="form-control" type="text" name="descricao" id="descricao" value="{{$tarefa->Descricao}}">
             </div>
 
             <div class="tipo">
                 <label for="tipo"> Tipo</label>
-                <input class="form-control" id="tipo" name="tipo" type="text">
+                <input class="form-control" id="tipo" name="tipo" type="text" value="{{$tarefa->tipo_de_tarefas}}">
             </div>
 
             <div class="conc">
-                <p>Data da Conclusão: <input class="form-control" type="text" name="datepicker" id="datepicker"></p>
+                <p>Data da Conclusão: <input class="form-control" type="text" name="datepicker" id="datepicker" value="{{$tarefa->Data_da_conclusão}}"></p>
             </div>
 
             <div class="btn">
-                <button class="btn btn-primary">Criar</button>
+                <button class="btn btn-primary">Salvar</button>
             </div>
         </div>
         

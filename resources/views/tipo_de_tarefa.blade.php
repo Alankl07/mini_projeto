@@ -13,7 +13,8 @@
     <div id="divlt">
 
     </div>
-    <form id="divm" action="">
+    <form id="divm" action="{{route('tipo.store')}}" method="POST">
+        @csrf
         <h1>Tipo de Tarefa</h1>
         <label for="nome">Nome da Tarefa</label>
         <input class="form-control" type="text" id="nome" name="nome">

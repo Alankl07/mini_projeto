@@ -17,9 +17,9 @@ class CreateUsuariosTable extends Migration
             $table->bigIncrements('id');
             $table->string('Nome');
             $table->string('Sexo');
-            $table->date('Data_de_Nascimento');
-            $table->string('E-mail');
-            $table->integer('Telefone');
+            $table->string('Data_de_Nascimento');
+            $table->string('Email');
+            $table->string('Telefone');
             $table->string('Login');
             $table->string('Senha');
             $table->timestamps();
